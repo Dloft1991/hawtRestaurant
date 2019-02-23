@@ -24,18 +24,14 @@
             <div class="card-header">
                 Current Reservations
             </div>
-            <div class="card card-body mt-2 mb-2 ml-4 bg-light" style="width: 95%; border-radius: 5px;">
-                <h1><span class="label label-primary">1</span> | Guy Eats</h1>
-            </div>
+
         </div>
 
         <div class="card mt-3" id="waiting-list">
             <div class="card-header">
                 Waiting List
             </div>
-            <div class="card card-body mt-2 mb-2 ml-4 bg-light" style="width: 95%; border-radius: 5px;">
-                <h1><span class="label label-primary">1</span> | Guy Waits</h1>
-            </div>
+
         </div>
 
     </div>
@@ -46,11 +42,12 @@
     crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-    $.get("/api/reservation", function (data) {
+    $.get("/api/reservations", function (data) {
         var i = 0;
-        for (i; i < 5; i++) {
+        for (i; i < 5 && i < data.length; i++) {
             var reservations = $("#reservation-list");
-
+            console.log(data[i]);
+            reservations.html = "";
             reservations.append(
                 `
                 <div class="card card-body mt-2 mb-2 ml-4 bg-light" style="width: 95%; border-radius: 5px;">
@@ -60,13 +57,13 @@
             )
             //I dont know if this works properly
         }
-        for (i; i > -1; i++) {
+        for (i; i < data.length; i++) {
             var waiting = $("#waiting-list");
-
+            reservations.html = "";
             waiting.append(
                 `
                 <div class="card card-body mt-2 mb-2 ml-4 bg-light" style="width: 95%; border-radius: 5px;">
-                <h1><span class="label label-primary">${i}</span> | ${"${data[i].uniqueID}"}</h1>
+                <h1><span class="label label-primary">${i}</span> | ${data[i].uniqueID} </h1>
                 </div>
             `
             )
