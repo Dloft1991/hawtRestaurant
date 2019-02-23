@@ -9,9 +9,6 @@
         crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
     <title></title>
 </head>
 
@@ -26,25 +23,48 @@
     </div>
 
     <form class="container border mb-2">
-            <div class="form-group">
-              <label for="name-input">Name</label>
-              <input type="text" class="form-control" id="name-input" placeholder="John Johnson">
-            </div>
-            <div class="form-group">
-              <label for="phoneNumber-input">Phone Number</label>
-              <input type="text" class="form-control" id="phoneNumber-input" placeholder="digits">
-            </div>
-            <div class="form-group">
-              <label for="email-input">Email</label>
-              <input type="text" class="form-control" id="email-input" placeholder="something@email.com">
-            </div>
-            <div class="form-group">
-              <label for="id-input">Unique ID</label>
-              <input type="text" class="form-control" id="id-input" placeholder="six digit number">
-            </div>
-            <input class="btn btn-primary" type="submit" value="Submit">
-          </form>
+        <div class="form-group">
+            <label for="name-input">Name</label>
+            <input type="text" class="form-control" id="name-input" placeholder="John Johnson">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber-input">Phone Number</label>
+            <input type="text" class="form-control" id="phoneNumber-input" placeholder="digits">
+        </div>
+        <div class="form-group">
+            <label for="email-input">Email</label>
+            <input type="text" class="form-control" id="email-input" placeholder="something@email.com">
+        </div>
+        <div class="form-group">
+            <label for="id-input">Unique ID</label>
+            <input type="text" class="form-control" id="id-input" placeholder="six digit number">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit" id="submit-btn">
+    </form>
 
 </body>
+<script>
+    $("#submit-btn").on("click", (event) => {
+        event.preventDefault();
+
+        var customer = {
+            date: Date.now(),
+            name: $("#name-input").val().trim(),
+            phoneNumber: $("#phoneNumber-input").val().trim(),
+            email: $("#email-input").val().trim(),
+            uniqueId: $("#id-input").val().trim()
+        }
+
+        $.post("the path", customer)
+            .then(function (data) {
+                console.log(data);
+                alert("RESERVATION CREATED");
+            })
+    })
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
 
 </html>
