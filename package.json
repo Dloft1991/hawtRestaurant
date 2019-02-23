@@ -1,8 +1,15 @@
 {
+
   "name": "hawtRestaurant",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+
+  "name": "hawtrestaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +17,20 @@
     "type": "git",
     "url": "git+https://github.com/Dloft1991/hawtRestaurant.git"
   },
+
   "keywords": [],
+
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Dloft1991/hawtRestaurant/issues"
   },
   "homepage": "https://github.com/Dloft1991/hawtRestaurant#readme",
-  "dependencies": {
-    "express": "^4.16.4"
+
+
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
+
   }
 }
