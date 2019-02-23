@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <title></title>
+</head>
+
+<body style="position: absolute; height: 100%; width: 100%">
+
+    <div class="jumbotron text-center mt-3 offset-1" style="width: 80%">
+        <h1 class="display-4 text-center"><i class="fas fa-fire-alt"></i>HAWT RESTAURANT</h1>
+        <hr class="my-4">
+        <p class="lead text-center">WE ONLY HAVE FIVE TABLES! QUICK BOOK BEFORE YOU CATCH ON FIRE</p>
+        <a class="btn btn-danger btn-lg" href="./make.html" role="button">RESERVATIONS!!</a>
+        <a class="btn btn-secondary btn-lg" href="./home.html" role="button"><i class="fas fa-home"></i>HOME</a>
+    </div>
+    <div class="container">
+
+        <div class="card">
+            <div class="card-header">
+                Current Reservations
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">UNIQUE ID</th>
+                    </tr>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                    </tr>
+                </thead>
+                <tbody id="reserved-tables">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Waiting List
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">UNIQUE ID</th>
+                    </tr>
+                </thead>
+                <tbody id="waiting-list">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
