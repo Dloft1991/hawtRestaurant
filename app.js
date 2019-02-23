@@ -9,6 +9,7 @@ app.use(express.json());
 
 var reservations = [
   {
+    date: "",
     name: "DDD",
     phone: "786888888",
     Email: "ddd@gmail.com",
