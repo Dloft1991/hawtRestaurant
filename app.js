@@ -4,19 +4,25 @@ var app = express();
 var PORT = 3000;
 
 
-
+var reservations = {
+    name: "DDD",
+    phone: "786888888",
+    Email: "ddd@gmail.com",
+    uniqueID: "78666"
+  };
 
 // Server routes
-app.get("/", function(req, res) {
-    res.send("Welcome to the Star Wars Page!");
+app.get("/api/reservation", function(req, res) {
+    res.send("Welcome to Hawt Restaurant!");
+    res.json(reservations);
   });
   
-  app.get("/yoda", function(req, res) {
-    res.json(yoda);
+  app.get("/", function(req, res) {
+    res.json(reservation);
   });
   
-  app.get("/darthmaul", function(req, res) {
-    res.json(darthmaul);
+  app.get("/make", function(req, res) {
+    res.json(reservation);
   });
 
 
@@ -24,7 +30,28 @@ app.get("/", function(req, res) {
     console.log("App listening on PORT " + PORT);
   });
 
-  ddd
+
+// Takes reservation information & posts it JSON/Server.
+app.post("/api/reservation", function(req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body parsing middleware
+    var newreservation = req.body;
+  
+    console.log(newreservation);
+  
+    // We then add the json the user sent to the character array
+    reservations.push(newreservation);
+  
+    // We then display the JSON to the users
+    res.json(newreservation);
+  });
+  
+  
+  
+  
+
+
+
 
 
 
