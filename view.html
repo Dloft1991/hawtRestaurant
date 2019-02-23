@@ -9,8 +9,7 @@
         crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+
     <title></title>
 </head>
 
@@ -45,5 +44,33 @@
 
     </div>
 </body>
+
+<script type="text/javascript">
+    $.get("the path", function (data) {
+        var i = 0;
+        for (i; i < 5; i++) {
+            var reservations = $("#reservation-list");
+
+            reservations.append(`
+                <div class="card card-body mt-2 mb-2 ml-4 bg-light" style="width: 95%; border-radius: 5px;">
+                <h1><span class="label label-primary">${i}</span> | ${"data[i].uniqueID"}</h1>
+                </div>
+            `)
+            //I dont know if this works properly
+        }
+        for (i; i > -1; i++) {
+            var waiting = $("#waiting-list");
+
+            waiting.append(`
+                <div class="card card-body mt-2 mb-2 ml-4 bg-light" style="width: 95%; border-radius: 5px;">
+                <h1><span class="label label-primary">${i}</span> | ${"${data[i].uniqueID}"}</h1>
+                </div>
+            `)
+        }
+    });
+</script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
 
 </html>
